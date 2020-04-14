@@ -6,11 +6,11 @@ public class AverageOfSubarrayOfSizeK {
 		double[] result= new double[arr.length-K+1];
 		double windowSum=0;
 		int windowStart=0;
-		for(int windowEnd=0;windowEnd<arr.length;windowEnd++) {
-			windowSum+=arr[windowEnd];
-			if(windowEnd>=K-1) {
-				result[windowStart]=windowSum/K;
-				windowSum-=arr[windowStart];
+		for(int windowEnd=0;windowEnd<arr.length;windowEnd++) { //Iterate through array one at a time O(n)
+			windowSum+=arr[windowEnd]; //At each iteration, you add current element to windowSum
+			if(windowEnd>=K-1) { //If for the first time windows hits the required size
+				result[windowStart]=windowSum/K; //process the window object
+				windowSum-=arr[windowStart];// reduce the window size by one
 				windowStart++;
 				
 			}
