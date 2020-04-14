@@ -1,6 +1,9 @@
 package coding_interview;
 
 public class SmallestSubarrayWIthAGivenSum {
+	/*
+	 * This is O(n*n) solution
+	 */
 	
 	public static int findLenOfSmallestSubarrayWithaGivenSum(int[] arr,int s) {
 		int min_len=Integer.MAX_VALUE;
@@ -20,6 +23,11 @@ public class SmallestSubarrayWIthAGivenSum {
 		}
 		return min_len!=Integer.MAX_VALUE? min_len : 0;
 	}
+	/*
+	 * This is O(n+n)=O(n) solution
+	 * because windowEnd scans through each element once in the outer for loop
+	 * and windowStart scans through each element once inside while loop
+	 */
 	
 	public static int findLenOfSmallestSubarrayWithaGivenSumUsingSlidingWindow(int[] arr,int s) {
 		int windowStart=0;
